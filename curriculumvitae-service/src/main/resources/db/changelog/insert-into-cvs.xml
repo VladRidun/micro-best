@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="1" author="VladR">
+        <insert tableName="cvs">
+            <column name="id" value="1"/>
+            <column name="uuid" value="123e4567-e89b-12d3-a456-426614174301"/>
+            <column name="name" value="Vlad"/>
+            <column name="surname" value="Vladovov"/>
+            <column name="country_id" value="1"/>
+            <column name="city" value="Moscow"/>
+            <column name="is_ready_to_relocate" valueBoolean="true"/>
+            <column name="is_ready_for_remote_work" valueBoolean="true"/>
+            <column name="status" value="DRAFT"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="2" author="VladR">
+        <insert tableName="cvs">
+            <column name="id" value="2"/>
+            <column name="uuid" value="123e4567-e89b-12d3-a456-426614174302"/>
+            <column name="name" value="Marina"/>
+            <column name="surname" value="Marinina"/>
+            <column name="country_id" value="2"/>
+            <column name="city" value="Pekin"/>
+            <column name="is_ready_to_relocate" valueBoolean="true"/>
+            <column name="is_ready_for_remote_work" valueBoolean="true"/>
+            <column name="status" value="DRAFT"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="VladR">
+        <insert tableName="cvs">
+            <column name="id" value="3"/>
+            <column name="uuid" value="123e4567-e89b-12d3-a456-426614174303"/>
+            <column name="name" value="Artem"/>
+            <column name="surname" value="Artemov"/>
+            <column name="country_id" value="3"/>
+            <column name="city" value="Minsk"/>
+            <column name="is_ready_to_relocate" valueBoolean="true"/>
+            <column name="is_ready_for_remote_work" valueBoolean="true"/>
+            <column name="status" value="DRAFT"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

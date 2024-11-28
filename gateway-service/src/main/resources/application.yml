@@ -1,0 +1,43 @@
+spring:
+  cloud:
+    gateway:
+     routes:
+        - id: curriculumvitae-service
+          uri: lb://CURRICULUMVITAE-SERVICE
+          predicates:
+            - Path=/cvs/**
+
+        - id: country-service
+          uri: lb://COUNTRY-SERVICE
+          predicates:
+            - Path=/country/**
+
+        - id: identity-service
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/auth/**
+
+  application:
+    name: GATEWAY-SERVICE
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            provider: keycloak
+            client-id: security
+            client-secret: ${KEYCLOAK_SECRET}
+            scope: openid
+            authorization-grant-type: authorization_code
+
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8090/realms/micro
+            token-uri: http://localhost:8090/realms/micro/protocol/openid-connect/token
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

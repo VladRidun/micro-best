@@ -1,0 +1,15 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: IDENTITY-SERVICE
+
+  security:
+    jwt:
+      secret: ${JWT_SECRET_PHRASE}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
